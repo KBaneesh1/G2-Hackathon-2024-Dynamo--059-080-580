@@ -17,7 +17,7 @@ driver = Chrome(options=options)
 
 # Navigate to the website
 total = 42
-p = []
+p = {"links":[]}
 prod_link=''
 try:
     while True:
@@ -34,7 +34,7 @@ try:
                 prod_name = product.text
                 print(prod_name)    
                 # func()
-                p.append(prod_link)
+                p["links"].append(prod_link)
 
             count += 1
         else:
