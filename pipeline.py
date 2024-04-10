@@ -17,11 +17,11 @@ total = 42
 try:
     while True:
         if(count<=total):
-            driver.get(f"https://www.getapp.com/project-management-planning-software/project-management/page-{count}/")
+            state1 = driver.get(f"https://www.getapp.com/project-management-planning-software/project-management/page-{count}/")
             # time.sleep(1)
                 # Wait for the repositories to be present
                 # Find all repository links
-            prod_links = driver.find_elements(By.XPATH, '//*[@id="__next"]/div[2]/div/div[2]/div[2]/div[2]/div')
+            prod_links = state1.find_elements(By.XPATH, '//*[@id="__next"]/div[2]/div/div[2]/div[2]/div[2]/div')
             prod_links = prod_links[1:]
             for idx, prod in enumerate(prod_links):
                 print("inside for")
@@ -29,10 +29,12 @@ try:
                 prod_link = product.get_attribute("href")
                 prod_name = product.text
                 print(prod_name)
-                product.click()
+                # product.click()
+                new_url = f"https://www.getapp.com/project-management-planning-software/a/{(prod_name).lower()}"
+                child_state = driver.get(new_url)
                 WebDriverWait(driver, 2).until(EC.url_changes(driver.current_url))
                 func()
-                driver.back()
+                
             
             count += 1
         else:
