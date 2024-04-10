@@ -21,8 +21,8 @@ try:
             # time.sleep(1)
                 # Wait for the repositories to be present
                 # Find all repository links
-            prod_links = driver.find_elements(By.XPATH, '//*[@id="__next"]/div[2]/div/div[2]/div[2]/div[2]')
-
+            prod_links = driver.find_elements(By.XPATH, '//*[@id="__next"]/div[2]/div/div[2]/div[2]/div[2]/div')
+            prod_links = prod_links[1:]
             for idx, prod in enumerate(prod_links):
                 print("inside for")
                 product = prod.find_element(By.XPATH, ".//div[1]/div/a")
