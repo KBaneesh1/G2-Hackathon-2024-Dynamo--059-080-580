@@ -17,7 +17,7 @@ total = 42
 try:
     while True:
         if(count<=total):
-            driver.get(f"https://www.getapp.com/project-management-planning-software/page-{count}/")
+            driver.get(f"https://www.getapp.com/project-management-planning-software/project-management/page-{count}/")
             # time.sleep(1)
                 # Wait for the repositories to be present
                 # Find all repository links
