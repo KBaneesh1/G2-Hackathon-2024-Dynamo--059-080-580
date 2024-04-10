@@ -2,6 +2,7 @@ from undetected_chromedriver import Chrome, ChromeOptions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import json
 
 product_rate = []
 count = 1
@@ -17,6 +18,7 @@ driver = Chrome(options=options)
 # Navigate to the website
 total = 42
 p = []
+prod_link=''
 try:
     while True:
         if count <= total:
@@ -42,3 +44,7 @@ except Exception as e:
     print(f"Error {e}")
 print(p)
 driver.quit()
+
+# Write the list p to a JSON file
+with open('prod_links.json', 'w') as json_file:
+    json.dump(p, json_file)
