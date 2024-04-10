@@ -109,7 +109,7 @@
                         "self": "https://data.g2.com/api/v1/products/0001747d-6236-45db-8f81-554c02f5968e/relationships/competitors",
                         "related": "https://data.g2.com/api/v1/products/0001747d-6236-45db-8f81-554c02f5968e/competitors"
                     }
-                },
+                },  
                 "main_category": {
                     "links": {
                         "self": "https://data.g2.com/api/v1/products/0001747d-6236-45db-8f81-554c02f5968e/relationships/main-category",
