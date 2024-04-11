@@ -35,7 +35,7 @@ with open('products_website.jsonl','a') as json_file:
                         website = prod.find_element(By.XPATH , ".//div[1]/div[2]/a")
                         website_link = website.get_attribute("href")
                         prod_link = product.get_attribute("href")
-                        prod_name = prod_name = prod.find_element(By.XPATH, ".//div/div/div[1]/a/h2/span").text
+                        prod_name = prod.find_element(By.XPATH, ".//div/div/div[1]/a/h2/span").text
                         print(prod_name)    
                         # func()
                         record = {
