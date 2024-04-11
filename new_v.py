@@ -46,5 +46,5 @@ print(p)
 driver.quit()
 
 # Write the list p to a JSON file
-with open('prod_links.json', 'w') as json_file:
+with open('prod_links2.json', 'w') as json_file:
     json.dump(p, json_file)
