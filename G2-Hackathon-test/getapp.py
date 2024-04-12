@@ -17,7 +17,7 @@ r = 1
 c = 1
 cat = 2
 col_flag = 0
-
+print("hii in getapp")
 with open(f'All_products.jsonl','a') as json_file:
     try:
         while True:

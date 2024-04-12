@@ -8,7 +8,7 @@ from pyspark.sql.types import StructType, StructField, StringType
 ##############################################################################
 #####################preprocess jsonl file####################################
 
-
+print("hi in sparkjob")
 def preprocess_jsonl(input_file, output_file):
     with open(input_file, 'r') as f:
         data = f.read()

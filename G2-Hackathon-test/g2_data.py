@@ -11,7 +11,7 @@ headers = {
 all_products = []
 count = 0
 next_page_url = url
-
+print("hi in g2_data")
 while next_page_url:
     try:
         resp = requests.get(next_page_url, headers=headers)
@@ -22,7 +22,7 @@ while next_page_url:
             in_data  = data["data"]
             # print(type(data))
             name = None
-            self_link  =None
+            self_link = None
             prod_url = None
             for prod in (in_data):
                 name = prod["attributes"]["name"]
