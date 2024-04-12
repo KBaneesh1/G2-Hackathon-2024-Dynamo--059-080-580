@@ -11,7 +11,6 @@ COPY . /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the Python files into the container at /app
-COPY script1.py script2.py script3.py /app/
 
 # Run all Python scripts sequentially when the container launches
-CMD ["python", "g2_data.py", "&&", "python", "script2.py", "&&", "python", "script3.py"]
+CMD ["python", "g2_data.py", "&&", "python", "getapp.py", "&&", "python", "script3.py"]
