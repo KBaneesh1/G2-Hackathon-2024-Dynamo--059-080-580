@@ -14,5 +14,7 @@ RUN pip install undetected_chromedriver selenium pandas pyspark
 # Copy the Python files into the container at /app
 COPY . /app/
 
-# Run all Python scripts sequentially when the container launches
-CMD ["python", "g2_data.py", "&&", "python", "getapp.py", "&&", "python", "sparkjob.py"]
+
+CMD ["python", "g2_data.py", "python", "getapp.py", "python", "sparkjob.py"]
+
+
