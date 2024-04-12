@@ -1,0 +1,15 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: my-python-cronjob
+spec:
+  schedule: "*/5 * * * *"  # Run every 5 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: my-python-cronjob
+            image: my-python-app
+            imagePullPolicy: IfNotPresent
+          restartPolicy: OnFailure
