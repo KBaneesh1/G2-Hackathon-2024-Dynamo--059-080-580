@@ -8,7 +8,7 @@ This repository contains scripts and configurations for fetching data from G2, s
 
 This Python script fetches product data from the G2 API using an API token and saves the response to a JSON file. It iterates through multiple pages of the API response until all products are fetched.
 
-To run:
+
 ```bash
 python g2_data.py
 
