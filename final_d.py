@@ -1,4 +1,9 @@
 from pyspark.sql import SparkSession
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import from_json, col, explode
+from pyspark.sql.types import StructType, StructField, StringType
+
+
 spark = SparkSession.builder \
     .appName("Load JSON into DataFrame") \
     .getOrCreate()
@@ -9,11 +14,6 @@ df1.show()
 df1.write.csv("out1.csv", mode="overwrite", header=True)
 
 
-
-
-from pyspark.sql import SparkSession
-from pyspark.sql.functions import from_json, col, explode
-from pyspark.sql.types import StructType, StructField, StringType
 
 # Initialize SparkSession
 spark = SparkSession.builder \
@@ -37,12 +37,6 @@ df2 = spark.read.json(spark.sparkContext.parallelize([json_string]), schema=sche
 df2.show()
 
 
-
-
-
-from pyspark.sql import SparkSession
-
-# Initialize SparkSession
 spark = SparkSession.builder \
     .appName("DataFrame Difference") \
     .getOrCreate()
