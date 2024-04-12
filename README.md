@@ -21,6 +21,9 @@ To run:
 python getapp.py
 ```
 sparkjob.py : 
+All the data is stored in Hadoop distributed file system
+Apache spark is used to fetch data and process the data parallely and dataframes are generated and being processed.
+The dataframes are used to seperate the products not listed on the G2 web 
 This PySpark script preprocesses the scraped JSONL file, converts it to a JSON file, and performs data manipulation tasks. It then writes the final result to a CSV file.
 
 ```bash
