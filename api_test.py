@@ -18,11 +18,9 @@ with open('suiiiiii.jsonl', 'w',encoding='utf-8') as json_file:
             if resp.status_code == 200:
                 k = ''''''
                 data = resp.json()
-                json_str=json.dumps(data)
-                print(type(json_str))
+                json_str=json.dumps(data).strip()
                 
-                
-                json_file.write(json_str.strip()+"\n")
+                json_file.write(json_str+"\n")
                 next_page_url = data['links'].get('next')
             else:
                 print("Failed to retrieve valid response from the API")
