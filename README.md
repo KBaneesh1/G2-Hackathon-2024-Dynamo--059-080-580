@@ -11,18 +11,21 @@ This Python script fetches product data from the G2 API using an API token and s
 
 ```bash
 python g2_data.py
+```
 
 getapp.py
 This script scrapes product data from the GetApp website using Selenium with an undetected ChromeDriver. It saves the scraped data to a JSONL file containing one JSON record per line.
 
 To run:
-bash
+```bash
 python getapp.py
-
+```
 sparkjob.py
 This PySpark script preprocesses the scraped JSONL file, converts it to a JSON file, and performs data manipulation tasks. It then writes the final result to a CSV file.
 
+```bash
 python sparkjob.py
+```
 
 Dockerfile
 This Dockerfile defines a Docker image containing all the necessary dependencies to run the Python scripts. It installs Python dependencies, copies the script files into the container, and runs the scripts sequentially.
@@ -55,29 +58,34 @@ To run the scripts, ensure you have Python installed on your system. If you're u
 Clone this repository to your local machine.
 Navigate to the repository directory.
 Run the Python scripts sequentially:
-bash
 
+```bash
 python g2_data.py
 python getapp.py
 python sparkjob.py
+```
 or build and run the Docker image:
-bash
+```bash
 
 docker build -t my-python-app .
 docker run my-python-app
+```
 Check the output files generated in the repository directory.
 Running with Kubernetes CronJob
 To run the scripts automatically at regular intervals using Kubernetes, follow these steps:
 
 Ensure you have a Kubernetes cluster set up and kubectl configured.
 Apply the CronJob configuration:
-bash
+
+```bash
 
 kubectl apply -f cronjob.yml
+```
 This will create a CronJob named my-python-cronjob.
 Monitor the logs of the CronJob to see the execution output:
-bash
+```bash
 
 kubectl logs -f <pod_name>
+```
 Replace <pod_name> with the actual name of the pod created by the CronJob.
 That's it! You've successfully set up automated data fetching and processing using Kubernetes CronJob.
