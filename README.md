@@ -13,43 +13,43 @@ This Python script fetches product data from the G2 API using an API token and s
 python g2_data.py
 ```
 
-getapp.py
+getapp.py :
 This script scrapes product data from the GetApp website using Selenium with an undetected ChromeDriver. It saves the scraped data to a JSONL file containing one JSON record per line.
 
 To run:
 ```bash
 python getapp.py
 ```
-sparkjob.py
+sparkjob.py : 
 This PySpark script preprocesses the scraped JSONL file, converts it to a JSON file, and performs data manipulation tasks. It then writes the final result to a CSV file.
 
 ```bash
 python sparkjob.py
 ```
 
-Dockerfile
+Dockerfile :
 This Dockerfile defines a Docker image containing all the necessary dependencies to run the Python scripts. It installs Python dependencies, copies the script files into the container, and runs the scripts sequentially.
 
-cronjob.yml
+cronjob.yml :
 This YAML file defines a Kubernetes CronJob that schedules the execution of the Python scripts at regular intervals using the Docker image built from the provided Dockerfile.
 
-Output Files
-trip.json
+Output Files : 
+trip.json :
 This file contains the raw JSON response fetched from the G2 API by g2_data.py.
 
-All_products.jsonl
+All_products.jsonl :
 This file contains the scraped product data from GetApp in JSONL format.
 
-preprocessed_products_website.jsonl
+preprocessed_products_website.jsonl :
 This file contains the preprocessed JSONL data, with each JSON record on a separate line.
 
-ip.json
+ip.json :
 This file contains the JSON data converted from JSONL, ready for processing by PySpark.
 
-out1.csv
+out1.csv :
 This CSV file contains intermediate data processed by PySpark.
 
-out_final.csv
+out_final.csv :
 This CSV file contains the final processed data after joining and manipulation tasks performed by PySpark.
 
 Running the Scripts
